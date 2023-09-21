@@ -1,6 +1,7 @@
 SHELL=cmd.exe
 FRONT_END_BINARY=frontApp.exe
 BROKER_BINARY=brokerApp
+AUTH_BINARY=authApp
 
 ## up: start all containers in the background without forcing build
 up:
@@ -9,7 +10,7 @@ up:
 	@echo "Docker started!"
 
 ## docker_up_build: Build all projects and start docker compose
-up_build: build_broker
+up_build: build_broker build_auth
 	@echo "Starting docker images..."
 	docker-compose up --build -d
 	@echo "Docker started!"
@@ -19,9 +20,16 @@ build_broker:
 	cd ..\broker-service && set GOOS=linux&& set GOARCH=amd64&& set CGO_ENABLED=0 && go build -o ${BROKER_BINARY} ./cmd/api
 	@echo Done!
 
+
+build_auth:
+	@echo Building auth binary...
+	cd ..\authentication-service && set GOOS=linux&& set GOARCH=amd64&& set CGO_ENABLED=0 && go build -o ${AUTH_BINARY} ./cmd/api
+	@echo Done!
+
 build_front:
 	@echo Building front end binary ...
 	cd ..\front-end && set GOOS=windows&& set CGO_ENABLED=0 && go build -o ${FRONT_END_BINARY} ./cmd/web
+	@echo Done
 
 #
 #build_front:
