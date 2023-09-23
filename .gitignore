@@ -5,3 +5,5 @@
 /front-end/frontApp.exe
 /broker-service/brokerApp
 /authentication-service/authApp
+/logger-service/.idea
+/project/db-data/postgres
