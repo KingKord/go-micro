@@ -7,3 +7,4 @@
 /authentication-service/authApp
 /logger-service/.idea
 /project/db-data/postgres
+/project/db-data/mongo
