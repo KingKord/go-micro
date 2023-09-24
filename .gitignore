@@ -8,3 +8,4 @@
 /logger-service/.idea
 /project/db-data/postgres
 /project/db-data/mongo
+/logger-service/loggerServiceApp
