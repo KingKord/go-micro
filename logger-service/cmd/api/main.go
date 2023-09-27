@@ -82,14 +82,12 @@ func connectToMongo() (*mongo.Client, error) {
 		Password: "password",
 	})
 
-	// connect
+	// Connect to the MongoDB and return Client instance
 	c, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
-		log.Println("Error connecting:", err)
+		fmt.Println("mongo.Connect() ERROR:", err)
 		return nil, err
 	}
-
-	log.Println("Connected to mongo!")
 
 	return c, nil
 }

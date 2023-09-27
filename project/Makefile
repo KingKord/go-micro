@@ -63,3 +63,5 @@ test:
 	@echo "Testing..."
 	go test -v ./...
 
+
+restart: down up_build
