@@ -8,6 +8,9 @@
 /logger-service/.idea
 /project/db-data/postgres
 /project/db-data/mongo
+/project/db-data/rabbitmq
 /logger-service/loggerServiceApp
 /mail-service/.idea
 /mail-service/mailApp
+/listener-service/.idea
+/listener-service/listenerApp
