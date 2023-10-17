@@ -1,6 +1,13 @@
 version: '3'
 
 services:
+
+  front-end:
+    image: gorbatykh/front-end:1.0.0
+    deploy:
+      mode: replicated
+      replicas: 1
+
   broker-service:
     image: gorbatykh/broker-service:1.0.1
     deploy:
