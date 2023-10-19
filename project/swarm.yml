@@ -15,10 +15,12 @@ services:
       - caddy_config:/config
 
   front-end:
-    image: gorbatykh/front-end:1.0.0
+    image: gorbatykh/front-end:1.0.2
     deploy:
       mode: replicated
       replicas: 1
+    environment:
+      BROKER_URL: "http://backend"
 
   broker-service:
     image: gorbatykh/broker-service:1.0.1
@@ -90,7 +92,6 @@ services:
     image: 'postgres:14.0'
     ports:
       - "5432:5432"
-    restart: always
     deploy:
       mode: replicated
       replicas: 1
